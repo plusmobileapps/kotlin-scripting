@@ -20,4 +20,4 @@ val parser = ArgParser(
 val myArgs = MyArgs(parser, args)
 val logger = Logger(myArgs.verbose)
 
-main(myArgs, logger)
+main(myArgs, logger, Shell(logger))
