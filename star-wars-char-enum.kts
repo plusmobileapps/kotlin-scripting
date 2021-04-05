@@ -18,5 +18,6 @@ val parser = ArgParser(
 )
 
 val myArgs = MyArgs(parser, args)
+val logger = Logger(myArgs.verbose)
 
-main(myArgs)
+main(myArgs, logger)
