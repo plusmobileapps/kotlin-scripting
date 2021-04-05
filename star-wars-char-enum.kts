@@ -11,4 +11,12 @@
 @file:Include("EnumGenerator.kt")
 @file:Include("FileWriter.kt")
 
-println("Hello from Kotlin!")
+import kotlinx.cli.ArgParser
+
+val parser = ArgParser(
+    programName = "./star-wars-char-enum.kts"
+)
+
+val myArgs = MyArgs(parser, args)
+
+main(myArgs)
