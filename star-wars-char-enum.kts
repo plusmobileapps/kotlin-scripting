@@ -18,4 +18,11 @@ val parser = ArgParser(
 val myArgs = MyArgs(parser, args)
 val logger = Logger(myArgs.verbose)
 
-main(myArgs, logger, Shell(logger))
+main(
+    args = myArgs,
+    logger = logger,
+    shell = Shell(logger),
+    csvReader = CsvReader(logger),
+    enumGenerator = EnumGenerator(logger),
+    fileWriter = FileWriter(logger)
+)

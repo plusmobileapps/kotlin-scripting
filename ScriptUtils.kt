@@ -28,7 +28,7 @@ class Shell(private val logger: Logger) {
 
 class FileWriter(private val logger: Logger) {
     companion object {
-        val GENERATED_FILE_PATH = "build/StarWarsCharacters.kt"
+        val GENERATED_FILE_PATH = "StarWarsCharacters.kt"
     }
 
     @Throws(IOException::class)
