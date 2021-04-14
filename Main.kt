@@ -16,12 +16,6 @@ fun main(
         git checkout ${args.branch}
         cd ../
     """.trimIndent())
-//    shell.apply {
-//        execute("git clone $GIT_REPOSITORY")
-//        execute("cd $PROJECT_NAME")
-//        execute("git checkout ${args.branch}")
-//        execute("cd ../")
-//    }
 
     try {
         csvReader.open("$PROJECT_NAME/star-wars-characters.csv") {
