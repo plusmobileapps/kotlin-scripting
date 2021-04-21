@@ -28,4 +28,4 @@ jobs:
       - name: Install kscript
         run: sdk install kscript
       - name: Run script
-        run: kscript ktest.kts star-wars-char-enum.kts
+        run: kscript ktest.kts
