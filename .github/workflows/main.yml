@@ -11,7 +11,7 @@ jobs:
       id: hello
       uses: plusmobileappss/kscript-action@v3
       with:
-        who-to-greet: '${{ github.workspace }}/star-wars-char-enum.kts'
+        who-to-greet: 'star-wars-char-enum.kts'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
