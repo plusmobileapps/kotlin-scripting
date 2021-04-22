@@ -1,12 +1,17 @@
 on: [push]
 
 jobs:
-  docker-example:
+  hello_world_job:
     runs-on: ubuntu-latest
-    container:
-      image: plusmobileapps/kscript-action:v0.8
+    name: A job to say hello
     steps:
-    - uses: actions/checkout@v2
-    - name: Run kscript tests  
-      run: kscript /ktest.kts /github/workspace/star-wars-char-enum.kts
-      
+    - name: Checkout
+      uses: actions/checkout@v2.3.4
+    - name: Hello world action step
+      id: hello
+      uses: plusmobileapps/kscript-action@v0.9
+      with:
+        who-to-greet: 'star-wars-char-enum.kts'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
