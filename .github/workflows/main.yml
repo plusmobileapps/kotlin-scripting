@@ -10,8 +10,6 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: plusmobileapps/kscript-action@v0.7
-      with:
-        who-to-greet: 'star-wars-char-enum.kts'
     - run: kscript /ktest.kts star-wars-char-enum.kts
     # Use the output from the `hello` step
     - name: Get the output time
