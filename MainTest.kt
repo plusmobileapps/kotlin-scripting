@@ -1,6 +1,7 @@
 import com.github.doyaaaaaken.kotlincsv.client.CsvFileReader
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 
@@ -65,6 +66,7 @@ class MainTest {
         verify { enumGenerator.processRow(expectedRow) }
         verify { fileWriter.write(expectedGeneratedContent) }
         verifyShellExecution { "rm -rf $PROJECT_NAME" }
+        assertTrue(false)
     }
 
     private fun verifyShellExecution(command: () -> String) {
