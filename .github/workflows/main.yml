@@ -3,11 +3,10 @@ on: [push]
 jobs:
   docker-example:
     runs-on: ubuntu-latest
+    container:
+      image: plusmobileapps/kscript-action:v0.8
     steps:
     - uses: actions/checkout@v2
     - name: Run kscript tests  
-      uses: docker://plusmobileapps/kscript-action:v0.8
-      with:
-        entrypoint: /
       run: kscript /ktest.kts /github/workspace/star-wars-char-enum.kts
       
