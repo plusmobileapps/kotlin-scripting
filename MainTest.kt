@@ -1,6 +1,7 @@
 import com.github.doyaaaaaken.kotlincsv.client.CsvFileReader
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 
