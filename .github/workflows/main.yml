@@ -1,7 +1,11 @@
-on: [push]
+on: 
+  push:
+  pull_request:
+      branches:
+        - main
 
 jobs:
-  hello_world_job:
+  test:
     runs-on: ubuntu-latest
     name: Run tests in kscript project
     steps:
@@ -9,9 +13,6 @@ jobs:
       uses: actions/checkout@v2.3.4
     - name: Run testing script to generate mock IDEA project and run gradle test
       id: hello
-      uses: plusmobileapps/kscript-action@v0.9.3
+      uses: plusmobileapps/kscript-action@v0.9.4
       with:
-        who-to-greet: 'star-wars-char-enum.kts'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+        kts-file: 'star-wars-char-enum.kts'
