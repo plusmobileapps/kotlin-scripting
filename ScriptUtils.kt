@@ -1,8 +1,10 @@
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
+import com.github.doyaaaaaken.kotlincsv.client.CsvFileReader
+import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 
-class Logger(private val verbose: Boolean) {
+class Logger(private val verbose: Boolean = false) {
 
     fun verbose(message: String) {
         if (verbose) println(message)
@@ -39,5 +41,13 @@ class FileWriter(private val logger: Logger) {
             it.write(fileContent)
         }
         logger.verbose("Finished writing file to: $GENERATED_FILE_PATH")
+    }
+}
+
+class CsvReader(private val logger: Logger) {
+    fun <T> open(filePath: String, csvFileReader: CsvFileReader.() -> T) {
+        logger.verbose("Opening csv file at: $filePath")
+        csvReader().open(filePath, csvFileReader)
+        logger.verbose("Finished processing csv file.")
     }
 }

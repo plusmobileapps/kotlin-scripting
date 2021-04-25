@@ -11,7 +11,6 @@
 @file:Include("Main.kt")
 @file:Include("MyArgs.kt")
 @file:Include("ScriptUtils.kt")
-@file:Include("CsvReader.kt")
 @file:Include("EnumGenerator.kt")
 
 //testing
