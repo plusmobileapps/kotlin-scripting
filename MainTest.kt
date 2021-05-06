@@ -66,6 +66,7 @@ class MainTest {
         verify { enumGenerator.processRow(expectedRow) }
         verify { fileWriter.write(expectedGeneratedContent) }
         verifyShellExecution { "rm -rf $PROJECT_NAME" }
+        assertTrue(false)
     }
 
     private fun verifyShellExecution(command: () -> String) {
