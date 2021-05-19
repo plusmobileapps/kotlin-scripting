@@ -17,7 +17,6 @@ jobs:
         kts-file: 'star-wars-char-enum.kts'
         kscript-version: '3.0.2'
         kotlin-version: '1.4.21'
-        fail-on-failure: 'false'
     - name: Publish Test Report
       uses: mikepenz/action-junit-report@v2
       with:
